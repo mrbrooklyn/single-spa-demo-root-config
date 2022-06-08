@@ -31,7 +31,7 @@
 #   - "./after_deploy.sh"
 
 language: node_js
-node_js:
+node_js: 16
   - node
 script:
   - yarn build
