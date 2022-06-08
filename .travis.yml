@@ -20,8 +20,8 @@ deploy:
   secret_access_key: "MGHoYVaXUVPO9AoUNMTq8hzjZeX6GbK2Sd84r4+S"
   bucket: "single-spa-demo-test"
   region: "ap-southeast-1"
-  # cache-control: "max-age=31536000"
-  # acl: "public_read"
+  cache-control: "max-age=31536000"
+  acl: "public_read"
   local_dir: dist
   skip_cleanup: true
   on:
