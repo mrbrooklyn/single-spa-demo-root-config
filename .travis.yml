@@ -18,8 +18,8 @@ deploy:
   provider: s3
   access_key_id: "$AWS_ACCESS_KEY_ID"
   secret_access_key: "$AWS_SECRET_ACCESS_KEY"
-  bucket: "single-spa-demo"
-  region: "us-west-2"
+  bucket: "single-spa-demo-test"
+  region: "ap-southeast-1"
   cache-control: "max-age=31536000"
   acl: "public_read"
   local_dir: dist
