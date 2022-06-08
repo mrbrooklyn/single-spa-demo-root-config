@@ -1,6 +1,14 @@
 language: node_js
 node_js:
   - node
+env:
+  global:
+    # include $HOME/.local/bin for `aws`
+    - PATH=$HOME/.local/bin:$PATH
+before_install:
+  - pyenv global 3.7.1
+  - pip install -U pip
+  - pip install awscli
 script:
   - yarn build
   - echo "Commit sha - $TRAVIS_COMMIT"
@@ -8,8 +16,8 @@ script:
   - mv dist/*.* dist/@thawkin3/root-config/$TRAVIS_COMMIT/
 deploy:
   provider: s3
-  access_key_id: "$AWS_ACCESS_KEY_ID"
-  secret_access_key: "$AWS_SECRET_ACCESS_KEY"
+  access_key_id: "AKIAYCT2D5S5FFNJFVFW"
+  secret_access_key: "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"
   bucket: "single-spa-demo-test"
   region: "ap-southeast-1"
   cache-control: "max-age=31536000"
@@ -18,3 +26,6 @@ deploy:
   skip_cleanup: true
   on:
     branch: master
+after_deploy:
+  - chmod +x after_deploy.sh
+  - "./after_deploy.sh"
