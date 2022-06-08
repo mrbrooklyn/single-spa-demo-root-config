@@ -16,8 +16,8 @@ script:
   - mv dist/*.* dist/@thawkin3/root-config/$TRAVIS_COMMIT/
 deploy:
   provider: s3
-  access_key_id: "AKIAYCT2D5S5FFNJFVFW"
-  secret_access_key: "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"
+  access_key_id: "AKIAYCT2D5S5DSXVXIPX"
+  secret_access_key: "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"
   bucket: "single-spa-demo-test"
   region: "ap-southeast-1"
   cache-control: "max-age=31536000"
